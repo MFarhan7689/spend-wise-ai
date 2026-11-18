@@ -1,7 +1,6 @@
 """
 Spend-Wise AI  -  ML core
 =========================
-Sab kuch lab manual ke concepts se:
   Lab 1  : Data Preprocessing (cleaning, encoding, scaling, train/test split)
   Lab 2  : Linear Regression  (monthly spending forecast)
   Lab 4  : Decision Tree      (transaction category classifier)
@@ -19,13 +18,13 @@ from sklearn.cluster import KMeans
 from sklearn.metrics import (accuracy_score, confusion_matrix, classification_report,
                              mean_squared_error, r2_score, silhouette_score)
 
-SEED = 42          # models ke liye
-DATA_SEED = 9      # synthetic data ke liye
+SEED = 42         
+DATA_SEED = 9     
 CATEGORIES = ["Food", "Transport", "Shopping", "Bills", "Entertainment", "Education", "Health"]
 PAYMENTS = ["Cash", "Card", "Wallet"]
 NUM_COLS = ["amount", "hour", "day_of_week", "day_of_month"]
 
-# amounts in PKR; peaks = (hour, spread) jab us category ka kharcha zyada hota hai
+
 PROFILES = {
     "Food":          dict(mu=700,  sd=157,  floor=80,  peaks=[(13, 1.5), (20, 2.0)], pay=[0.50, 0.20, 0.30]),
     "Transport":     dict(mu=400,  sd=112,  floor=50,  peaks=[(8, 1.5), (17, 1.5)],  pay=[0.40, 0.10, 0.50]),
